@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="kk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Топ 2 · АТФ-тің құрылысы мен қызметі</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%232e9e5b'/%3E%3Ctext x='32' y='42' font-size='26' font-weight='700' text-anchor='middle' fill='white' font-family='Arial'%3EATP%3C/text%3E%3C/svg%3E">
+<style>:root{--acc:#2e9e5b;--ink:#1f3a2d;--muted:#5d7468;--bg:#f2faf4;--card:#fff;--ok:#1c9c4f;--bad:#d64545;--line:#d7eadc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:"Segoe UI",Roboto,"Noto Sans",Arial,sans-serif;color:var(--ink);line-height:1.5;
+ background:radial-gradient(circle at 8% 4%,#e1f5e8 0,transparent 32%),radial-gradient(circle at 96% 12%,#e3f1fb 0,transparent 30%),var(--bg);min-height:100vh}
+.wrap{max-width:860px;margin:0 auto;padding:12px 14px 60px}
+header.hero{background:linear-gradient(135deg,var(--acc),color-mix(in srgb,var(--acc) 55%,#fff));color:#fff;border-radius:22px;padding:20px 18px;margin:8px 0 12px;box-shadow:0 8px 22px rgba(0,0,0,.12);position:relative;overflow:hidden}
+header.hero:after{content:"";position:absolute;right:-30px;top:-30px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,.15)}
+.tag{display:inline-block;background:rgba(255,255,255,.25);border-radius:999px;padding:2px 12px;font-size:.85rem;font-weight:600}
+.hero h1{margin:8px 0 2px;font-size:1.55rem;line-height:1.25}
+.hero p{margin:0;opacity:.95}
+.pair{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.pair input{flex:1 1 150px;border:0;border-radius:12px;padding:10px 12px;font-size:1rem;font-family:inherit}
+.scorebar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:16px;padding:8px 12px;margin:0 0 12px;display:flex;align-items:center;gap:10px;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.scorebar b{font-size:1.1rem;white-space:nowrap;color:var(--acc)}
+.bar{flex:1;height:12px;background:#e6efe8;border-radius:999px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acc),#8fd9a8);transition:width .4s}
+details.recall{background:#fffbea;border:1px solid #f3e2a0;border-radius:16px;padding:10px 14px;margin-bottom:14px}
+details.recall summary{cursor:pointer;font-weight:700}
+details.recall ul{margin:8px 0 2px;padding-left:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;margin-bottom:16px;box-shadow:0 4px 14px rgba(40,90,60,.07)}
+.card h2{margin:0 0 4px;font-size:1.15rem;display:flex;gap:10px;align-items:center}
+.num{flex:none;width:32px;height:32px;border-radius:50%;background:var(--acc);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700}
+.role{font-size:.85rem;color:var(--muted);margin:0 0 10px}
+.task-score{margin-left:auto;font-size:.9rem;background:#eef7f0;border-radius:999px;padding:2px 10px;color:var(--acc);white-space:nowrap}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center}
+button{font:inherit;cursor:pointer}
+.btn{background:var(--acc);color:#fff;border:0;border-radius:12px;padding:10px 18px;font-weight:700;min-height:44px}
+.btn.alt{background:#eef3ef;color:var(--ink)}
+.btn:active{transform:scale(.98)}
+.fb{margin-top:10px;padding:8px 12px;border-radius:12px;font-size:.95rem;display:none}
+.fb.show{display:block}.fb.good{background:#e5f7ec;color:#116a35}.fb.warn{background:#fdeceb;color:#9a2626}.fb.mid{background:#fff4dc;color:#8a5a00}
+svg.atp{width:100%;height:auto;background:#fbfffc;border:1px dashed #bcdcc6;border-radius:14px}
+.slots{display:grid;grid-template-columns:1fr;gap:8px;margin:12px 0}
+@media(min-width:620px){.slots{grid-template-columns:1fr 1fr}}
+.slotrow{display:flex;align-items:center;gap:8px}
+.slotrow .n{flex:none;width:28px;height:28px;border-radius:50%;background:var(--acc);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.slot{flex:1;min-height:48px;border:2px dashed #a9cdb5;border-radius:12px;padding:4px;display:flex;align-items:center;background:#f8fdf9}
+.slot:empty:before{content:"осы жерге қой";color:#9ab5a3;font-size:.85rem;padding:0 8px}
+.slot.ok{border:2px solid var(--ok);background:#e9f8ee}.slot.bad{border:2px solid var(--bad);background:#fdeeee}
+.bank{display:flex;flex-wrap:wrap;gap:8px;padding:10px;border-radius:14px;background:#eef7f0;min-height:54px}
+.chip{background:#fff;border:2px solid #9fcdb0;border-radius:999px;padding:7px 12px;font-size:.92rem;cursor:grab;user-select:none;touch-action:manipulation;line-height:1.25}
+.chip.sel{background:var(--acc);color:#fff;border-color:var(--acc);box-shadow:0 0 0 3px rgba(46,158,91,.25)}
+.slot .chip{border-radius:10px;width:100%;text-align:left}
+.hintline{font-size:.85rem;color:var(--muted);margin:6px 0}
+.mrow{padding:10px 0;border-bottom:1px solid #edf4ee;display:grid;gap:6px}
+.mrow:last-of-type{border-bottom:0}
+select,input[type=text],input.num-in,textarea{font:inherit;border:2px solid #b7d8c3;border-radius:10px;padding:8px 10px;background:#fff;color:var(--ink);max-width:100%}
+select.ok,input.ok{border-color:var(--ok);background:#e9f8ee}select.bad,input.bad{border-color:var(--bad);background:#fdeeee}
+.mrow select{width:100%}
+.para{font-size:1.05rem;line-height:2.3}
+.para select{margin:0 3px;padding:4px 8px;min-width:96px}
+.bankline{font-size:.9rem;color:var(--muted);margin-bottom:8px}
+.calc{padding:10px 0;border-bottom:1px solid #edf4ee}
+.calc:last-of-type{border-bottom:0}
+.calc input{width:110px;margin-right:6px}
+.sol{display:none;font-size:.9rem;margin-top:6px;color:#116a35;background:#e5f7ec;border-radius:8px;padding:4px 10px}
+.sol.show{display:block}
+.sol.hint{color:#8a5a00;background:#fff4dc}
+.tf{padding:10px 0;border-bottom:1px solid #edf4ee}
+.tf:last-child{border-bottom:0}
+.tfb{display:flex;gap:8px;margin-top:6px}
+.tfb button{flex:1;max-width:160px;border:2px solid #b7d8c3;background:#fff;border-radius:12px;padding:8px;font-weight:700;min-height:44px}
+.tfb button.chosen{background:#e6f1ff;border-color:#4b8fd8}
+.tfb button.ok{background:#e9f8ee;border-color:var(--ok)}.tfb button.bad{background:#fdeeee;border-color:var(--bad)}
+.why{display:none;font-size:.9rem;margin-top:6px;padding:6px 10px;border-radius:8px;background:#f3f7f4}
+.why.show{display:block}
+textarea{width:100%;min-height:110px;resize:vertical}
+.keys label{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;margin:6px 0;border-radius:12px;background:#f4faf6;border:1px solid #dcebe0;cursor:pointer}
+.keys input{width:22px;height:22px;flex:none;margin-top:2px;accent-color:var(--acc)}
+.result{text-align:center;background:linear-gradient(135deg,#fff,#eefaf1);}
+.result .big{font-size:2.6rem;font-weight:800;color:var(--acc)}
+footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:24px}
+a.back{color:#fff;text-decoration:none;font-size:.9rem;opacity:.9}
+/* index */
+.cards{display:grid;gap:14px;margin-top:14px}
+@media(min-width:700px){.cards{grid-template-columns:repeat(3,1fr)}}
+a.gcard{display:block;text-decoration:none;color:var(--ink);background:#fff;border:2px solid var(--c);border-radius:22px;padding:18px;box-shadow:0 6px 16px rgba(0,0,0,.08);transition:transform .15s}
+a.gcard:hover{transform:translateY(-3px)}
+a.gcard .em{font-size:2.4rem}
+a.gcard h3{margin:4px 0;color:var(--c);font-size:1.4rem}
+a.gcard span.go{display:inline-block;margin-top:8px;background:var(--c);color:#fff;border-radius:999px;padding:6px 16px;font-weight:700}
+</style></head><body><div class="wrap" id="app"></div>
+<noscript>Бұл бет жұмыс істеуі үшін JavaScript қосулы болуы керек.</noscript>
+<script>window.GROUP_DATA={"name": "Топ 2", "color": "#1f8fb3", "emoji": "🔬", "t1": {"markers": [{"n": 1, "key": "Аденин", "bx": 130, "by": 240, "tx": 118, "ty": 140}, {"n": 2, "key": "Рибоза", "bx": 275, "by": 258, "tx": 287, "ty": 172}, {"n": 3, "key": "Бірінші фосфат қалдығы (рибозаға жалғасқан)", "bx": 410, "by": 240, "tx": 410, "ty": 142}, {"n": 4, "key": "Соңғы (үшінші) фосфат қалдығы", "bx": 630, "by": 240, "tx": 630, "ty": 142}, {"n": 5, "key": "Макроэргиялық байланыс", "bx": 465, "by": 62, "tx": 465, "ty": 108}], "extra": ["Тимин", "Дезоксирибоза", "Амин қышқылы"]}, "t2": {"defs": [["Аденин, рибоза және екі фосфат қалдығынан тұратын нуклеотид", "АДФ"], ["Митохондрияда оттегінің қатысуымен органикалық заттар тотыққанда АДФ-тен АТФ түзілуі", "Тотығу фосфорлануы"], ["Хлоропласта жарық энергиясы есебінен АДФ-тен АТФ түзілуі", "Фотофосфорлану"], ["Митохондрияның ішкі мембранасының қатпарлары, мұнда АТФ түзіледі", "Кристалар"], ["Хлоропласт ішіндегі мембраналық қапшықтар, мұнда жарық фазасы жүреді", "Тилакоидтар"]], "extra": ["Рибоза"]}, "t3": {"text": "АДФ-тен тағы бір фосфат қалдығы бөлінгенде {АМФ} түзіледі. АМФ молекуласындағы фосфат қалдықтарының саны — {бір}. Жануар жасушасында АТФ негізінен {митохондрияда} түзіледі. Өсімдік жасушасында жарықта АТФ {хлоропластарда} да түзіледі. АДФ мен H₃PO₄-тен АТФ түзілуін {АТФ-синтаза} ферменті катализдейді.", "extra": ["үш", "ядрода", "рибосомада", "АДФ"]}, "t4": {"items": [{"q": "4 моль АТФ → АДФ-ке дейін гидролизденді. Қанша энергия (кДж) бөлінеді?", "a": 160, "u": "кДж", "sol": "4 моль × 40 кДж/моль = 160 кДж"}, {"q": "2,5 моль АТФ → АМФ-ке дейін толық гидролизденді (екі макроэргиялық байланыс үзіледі). Қанша энергия (кДж) бөлінеді?", "a": 200, "u": "кДж", "sol": "2,5 моль × 2 × 40 кДж/моль = 200 кДж"}, {"q": "Иондарды белсенді тасымалдау үшін 400 кДж энергия қажет. АТФ → АДФ-ке дейін ыдырайтын болса, неше моль АТФ керек?", "a": 10, "u": "моль", "sol": "400 кДж : 40 кДж/моль = 10 моль"}]}, "t5": [["АТФ — нуклеотид.", true, "АТФ азотты негізден (аденин), қанттан (рибоза) және фосфат қалдықтарынан тұрады."], ["АДФ молекуласында үш фосфат қалдығы бар.", false, "АДФ-те екі фосфат қалдығы бар (АТФ-те — үш)."], ["АТФ → АДФ реакциясында шамамен 40 кДж/моль энергия бөлінеді.", true, "Мектеп курсында әр макроэргиялық байланысқа шамамен 40 кДж/моль алынады."], ["Хлоропластарда АТФ жарық энергиясы есебінен түзіледі.", true, "Бұл процесс фотофосфорлану деп аталады."], ["АТФ белсенді тасымалдау үшін қолданылмайды.", false, "Белсенді тасымалдау (мысалы, Na⁺/K⁺ сорғысы) АТФ энергиясын қажет етеді."], ["Митохондрияда АТФ түзілуі оттегінің қатысуымен жүретін тотығу кезінде орындалады.", true, "Бұл — тотығу фосфорлануы (митохондрия кристаларында)."]], "t6": {"q": "Жүгіргенде бұлшық ет жасушаларында АТФ жұмсалуы күрт артады. АТФ қайда және қалай қайта түзіледі? Неге бұлшық ет жасушаларында митохондрия көп?", "keys": ["АТФ бұлшықеттің жиырылуына жұмсалып, АДФ мен фосфатқа ыдырайды.", "АТФ қайта түзілуі негізінен митохондрияда, оттегінің қатысуымен органикалық заттардың тотығуы арқылы жүреді.", "Митохондрия көп болса — АТФ көп әрі жылдам түзіледі, бұл жұмыс істеп тұрған жасуша үшін қажет.", "Оттегі жеткіліксіз болғанда цитоплазмада гликолиз арқылы АТФ аз мөлшерде түзіле алады."]}, "n": 2};</script>
+<script>(function(){
+var D=window.GROUP_DATA;
+var $=function(s,r){return (r||document).querySelector(s)};
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+var NS="http://www.w3.org/2000/svg";
+var scores={},max={};
+var root=$("#app");
+document.documentElement.style.setProperty("--acc",D.color);
+document.title=D.name+" · АТФ-тің құрылысы мен қызметі";
+
+/* ---------- header ---------- */
+var hero=el("header","hero",
+ '<a class="back" href="index.html">← Басты бет</a><br><span class="tag">10-сынып · Биология · Жұптық жұмыс</span>'+
+ '<h1>'+D.emoji+' '+D.name+': АТФ-тің құрылысы мен қызметі</h1>'+
+ '<p>Жұппен бірге орындаңдар: бір оқушы орындайды, екіншісі тексеріп, ұсыныс айтады. Әр тапсырмадан кейін рөлдеріңді ауыстырыңдар.</p>'+
+ '<div class="pair"><input id="p1" type="text" placeholder="1-оқушының аты-жөні" autocomplete="off"><input id="p2" type="text" placeholder="2-оқушының аты-жөні" autocomplete="off"></div>');
+root.appendChild(hero);
+var sb=el("div","scorebar",'<span>Ұпай:</span><b id="sc">0 / 0</b><div class="bar"><i id="bar"></i></div>');
+root.appendChild(sb);
+["p1","p2"].forEach(function(id){var i=$("#"+id);try{i.value=localStorage.getItem(D.name+id)||""}catch(e){}i.addEventListener("input",function(){try{localStorage.setItem(D.name+id,i.value)}catch(e){}})});
+
+root.appendChild((function(){var d=el("details","recall");d.innerHTML='<summary>📌 Еске түсірейік (анықтамалық)</summary><ul>'+
+ '<li><b>АТФ</b> (аденозинтрифосфат, аденозинүшфосфор қышқылы) — нуклеотид: <b>аденин</b> (азотты негіз) + <b>рибоза</b> (бес көміртекті қант) + <b>3 фосфор қышқылы қалдығы</b>.</li>'+
+ '<li>Фосфат қалдықтарының арасында <b>2 макроэргиялық байланыс</b> бар; мектеп курсында әрқайсысы үзілгенде шамамен <b>40 кДж/моль</b> энергия бөлінеді деп алынады.</li>'+
+ '<li>АТФ + H₂O → АДФ + H₃PO₄ + ≈40 кДж/моль; АДФ + H₂O → АМФ + H₃PO₄ + ≈40 кДж/моль.</li>'+
+ '<li>АТФ түзіледі: <b>митохондрияда</b> (кристаларда, тотығу фосфорлануы), <b>хлоропластарда</b> (тилакоидтарда, фотофосфорлану), гликолиз кезінде цитоплазмада. Түзілуін <b>АТФ-синтаза</b> катализдейді.</li>'+
+ '<li>Қызметі: органикалық заттардың биосинтезі, белсенді тасымалдау, қозғалыс (бұлшықет жиырылуы), жүйке импульсі, жасушаның бөлінуі, жылу бөлу т.б.</li></ul>';return d})());
+
+function card(n,title,role){
+ var c=el("section","card");
+ c.innerHTML='<h2><span class="num">'+n+'</span><span>'+title+'</span><span class="task-score" id="ts'+n+'">0 / 0</span></h2><p class="role">'+role+'</p>';
+ root.appendChild(c);return c}
+function setScore(n,v,m){scores[n]=v;max[n]=m;$("#ts"+n).textContent=v+" / "+m;var s=0,t=0;for(var k in max){s+=scores[k]||0;t+=max[k]}
+ $("#sc").textContent=s+" / "+t;$("#bar").style.width=(t?100*s/t:0)+"%";finalUpdate()}
+function fb(c,cls,msg){var f=$(".fb",c);f.className="fb show "+cls;f.innerHTML=msg}
+function fbbox(c){c.appendChild(el("div","fb"))}
+
+/* ---------- Task 1: label diagram ---------- */
+(function(){
+ var T=D.t1,c=card(1,"АТФ құрылысын белгіле","🧑‍🤝‍🧑 1-оқушы орындайды, 2-оқушы бақылайды. Сызбадағы нөмірлерге сәйкес атауларды таңдап қойыңдар: атауды түртіп (немесе сүйреп) тиісті ұяшыққа орналастырыңдар.");
+ var svg=document.createElementNS(NS,"svg");svg.setAttribute("viewBox","0 0 720 285");svg.setAttribute("class","atp");svg.setAttribute("role","img");svg.setAttribute("aria-label","АТФ молекуласының сызбасы");
+ function add(tag,attrs,txt){var e=document.createElementNS(NS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(txt!=null)e.textContent=txt;svg.appendChild(e);return e}
+ function nlab(x,y,t,col){add("circle",{cx:x,cy:y,r:11,fill:"#fff"});add("text",{x:x,y:y+5,"text-anchor":"middle","font-size":15,"font-weight":700,fill:col||"#2a5fb0"},t)}
+ // adenine
+ add("polygon",{points:"90,80 129,102.5 129,147.5 90,170 51,147.5 51,102.5",fill:"#dcecff",stroke:"#3b78c8","stroke-width":3});
+ add("polygon",{points:"129,102.5 172,89 198,125 172,161 129,147.5",fill:"#dcecff",stroke:"#3b78c8","stroke-width":3});
+ add("line",{x1:90,y1:80,x2:90,y2:56,stroke:"#3b78c8","stroke-width":3});
+ add("text",{x:90,y:50,"text-anchor":"middle","font-size":15,"font-weight":700,fill:"#2a5fb0"},"NH₂");
+ nlab(51,102.5,"N");nlab(90,170,"N");nlab(172,89,"N");nlab(172,161,"N");
+ // ribose
+ var cx=275,cy=160,r=40,pts=[],V=[];[180,252,324,36,108].forEach(function(a){var rad=a*Math.PI/180;var p=[cx+r*Math.cos(rad),cy+r*Math.sin(rad)];V.push(p);pts.push(p[0].toFixed(1)+","+p[1].toFixed(1))});
+ add("line",{x1:172,y1:161,x2:V[0][0],y2:V[0][1],stroke:"#444","stroke-width":3});
+ add("polygon",{points:pts.join(" "),fill:"#ffe9c9",stroke:"#d28a1d","stroke-width":3});
+ nlab(V[1][0],V[1][1],"O","#a35f00");
+ add("line",{x1:V[3][0],y1:V[3][1],x2:V[3][0]+10,y2:V[3][1]+28,stroke:"#444","stroke-width":2.5});add("text",{x:V[3][0]+12,y:V[3][1]+46,"text-anchor":"middle","font-size":14,fill:"#444"},"OH");
+ add("line",{x1:V[4][0],y1:V[4][1],x2:V[4][0]-4,y2:V[4][1]+28,stroke:"#444","stroke-width":2.5});add("text",{x:V[4][0]-5,y:V[4][1]+46,"text-anchor":"middle","font-size":14,fill:"#444"},"OH");
+ // chain
+ add("polyline",{points:V[2][0]+","+V[2][1]+" 335,118 386,118",fill:"none",stroke:"#444","stroke-width":3});
+ [434,544].forEach(function(x){add("path",{d:"M"+x+" 118 q 7.75 -15 15.5 0 t 15.5 0 t 15.5 0 t 15.5 0",fill:"none",stroke:"#d62f2f","stroke-width":4,"stroke-linecap":"round"})});
+ [410,520,630].forEach(function(x){add("circle",{cx:x,cy:118,r:24,fill:"#ffd9a0",stroke:"#e08a00","stroke-width":3});add("text",{x:x,y:126,"text-anchor":"middle","font-size":22,"font-weight":800,fill:"#7a4a00"},"P")});
+ // markers
+ var col=D.color;
+ T.markers.forEach(function(m){
+  if(m.span){add("line",{x1:m.span[0],y1:m.by,x2:m.span[1],y2:m.by,stroke:col,"stroke-width":3});
+   add("line",{x1:m.span[0],y1:m.by,x2:m.span[0],y2:m.by+9,stroke:col,"stroke-width":3});add("line",{x1:m.span[1],y1:m.by,x2:m.span[1],y2:m.by+9,stroke:col,"stroke-width":3});}
+  else{add("line",{x1:m.bx,y1:m.by,x2:m.tx,y2:m.ty,stroke:col,"stroke-width":2.5,"stroke-dasharray":"5 4"});add("circle",{cx:m.tx,cy:m.ty,r:4,fill:col});}
+  add("circle",{cx:m.bx,cy:m.by,r:15,fill:col,stroke:"#fff","stroke-width":2});
+  add("text",{x:m.bx,y:m.by+6,"text-anchor":"middle","font-size":17,"font-weight":800,fill:"#fff"},m.n);
+ });
+ c.appendChild(svg);
+ var slots=el("div","slots"),slotEls=[];
+ T.markers.forEach(function(m){var row=el("div","slotrow",'<span class="n">'+m.n+'</span>');var s=el("div","slot");s.dataset.key=m.key;row.appendChild(s);slots.appendChild(row);slotEls.push(s)});
+ c.appendChild(slots);
+ c.appendChild(el("div","hintline","Атаулар (түртіп таңда, сосын ұяшықты түрт; не сүйреп апар). Артық атаулар да бар!"));
+ var bank=el("div","bank");c.appendChild(bank);
+ var sel=null;
+ function mk(txt){var ch=el("span","chip",txt);ch.dataset.val=txt;ch.draggable=true;ch.id="chip"+Math.random().toString(36).slice(2,8);
+  ch.addEventListener("dragstart",function(e){e.dataTransfer.setData("text/plain",ch.id)});
+  ch.addEventListener("click",function(e){e.stopPropagation();
+   if(ch.parentNode!==bank){bank.appendChild(ch);clr(ch);return}
+   if(sel===ch){ch.classList.remove("sel");sel=null}else{if(sel)sel.classList.remove("sel");sel=ch;ch.classList.add("sel")}});
+  return ch}
+ function clr(ch){ch.classList.remove("sel");if(sel===ch)sel=null;slotEls.forEach(function(s){s.className="slot"})}
+ function put(s,ch){if(s.firstChild)bank.appendChild(s.firstChild);s.appendChild(ch);clr(ch);slotEls.forEach(function(x){x.className="slot"})}
+ shuffle(T.markers.map(function(m){return m.key}).concat(T.extra)).forEach(function(t){bank.appendChild(mk(t))});
+ slotEls.forEach(function(s){
+  s.addEventListener("click",function(){if(sel){put(s,sel)}else if(s.firstChild){bank.appendChild(s.firstChild);slotEls.forEach(function(x){x.className="slot"})}});
+  s.addEventListener("dragover",function(e){e.preventDefault()});
+  s.addEventListener("drop",function(e){e.preventDefault();var ch=document.getElementById(e.dataTransfer.getData("text/plain"));if(ch)put(s,ch)});
+ });
+ bank.addEventListener("dragover",function(e){e.preventDefault()});
+ bank.addEventListener("drop",function(e){e.preventDefault();var ch=document.getElementById(e.dataTransfer.getData("text/plain"));if(ch){bank.appendChild(ch);clr(ch)}});
+ var b=el("div","btns",'<button class="btn" type="button">Тексеру</button><button class="btn alt" type="button">Қайта бастау</button>');c.appendChild(b);fbbox(c);
+ setScore(1,0,T.markers.length);
+ b.children[0].onclick=function(){var ok=0,empty=0;slotEls.forEach(function(s){var ch=s.firstChild;if(!ch){empty++;s.className="slot bad";return}if(ch.dataset.val===s.dataset.key){ok++;s.className="slot ok"}else s.className="slot bad"});
+  setScore(1,ok,T.markers.length);
+  if(ok===T.markers.length)fb(c,"good","🎉 Тамаша! Барлық атау дұрыс қойылды.");
+  else if(empty)fb(c,"mid","Дұрысы: "+ok+" / "+T.markers.length+". Бос ұяшықтар бар — толтырып, қайта тексеріңдер.");
+  else fb(c,"warn","Дұрысы: "+ok+" / "+T.markers.length+". Қызыл ұяшықтағы атауды қайта ойланыңдар (қысқаша: ұяшықты түртсең, атау қайта қайтады).")};
+ b.children[1].onclick=function(){slotEls.forEach(function(s){if(s.firstChild)bank.appendChild(s.firstChild);s.className="slot"});if(sel){sel.classList.remove("sel");sel=null}
+  shuffle([].slice.call(bank.children)).forEach(function(x){bank.appendChild(x)});setScore(1,0,T.markers.length);$(".fb",c).className="fb"};
+})();
+
+/* ---------- Task 2: matching ---------- */
+(function(){
+ var T=D.t2,c=card(2,"Сәйкестендір","🧑‍🤝‍🧑 Рөлдерді ауыстырыңдар: енді 2-оқушы орындайды. Әр анықтамаға сәйкес терминді таңдаңдар.");
+ var terms=shuffle(T.defs.map(function(d){return d[1]}).concat(T.extra)),sels=[];
+ T.defs.forEach(function(d,i){var r=el("div","mrow",'<div><b>'+(i+1)+'.</b> '+d[0]+'</div>');var s=el("select");s.innerHTML='<option value="">— терминді таңдаңыз —</option>'+terms.map(function(t){return '<option>'+t+'</option>'}).join("");s.dataset.a=d[1];s.onchange=function(){s.className=""};r.appendChild(s);c.appendChild(r);sels.push(s)});
+ var b=el("div","btns",'<button class="btn" type="button">Тексеру</button><button class="btn alt" type="button">Қайта бастау</button>');c.appendChild(b);fbbox(c);setScore(2,0,sels.length);
+ b.children[0].onclick=function(){var ok=0;sels.forEach(function(s){if(s.value===s.dataset.a){ok++;s.className="ok"}else s.className="bad"});setScore(2,ok,sels.length);
+  fb(c,ok===sels.length?"good":(ok>=sels.length-2?"mid":"warn"),ok===sels.length?"🎉 Барлығы дұрыс!":"Дұрысы: "+ok+" / "+sels.length+". Қызыл жолдарды қайта қарап шығыңдар.")};
+ b.children[1].onclick=function(){sels.forEach(function(s){s.value="";s.className=""});setScore(2,0,sels.length);$(".fb",c).className="fb"};
+})();
+
+/* ---------- Task 3: fill in ---------- */
+(function(){
+ var T=D.t3,c=card(3,"Бос орынды толтыр","🧑‍🤝‍🧑 1-оқушы мәтінді дауыстап оқиды, 2-оқушы сөзді таңдайды. Ашылатын тізімнен дұрыс сөзді таңдаңдар.");
+ var answers=[];T.text.replace(/\{([^}]+)\}/g,function(_,a){answers.push(a)});
+ var bank=shuffle(answers.concat(T.extra));
+ c.appendChild(el("div","bankline","Сөздер: <b>"+bank.join(" · ")+"</b>"));
+ var p=el("div","para"),sels=[],i=0;
+ T.text.split(/(\{[^}]+\})/).forEach(function(part){var m=part.match(/^\{([^}]+)\}$/);
+  if(m){var s=el("select");s.innerHTML='<option value="">…</option>'+bank.map(function(t){return '<option>'+t+'</option>'}).join("");s.dataset.a=m[1];s.onchange=function(){s.className=""};p.appendChild(s);sels.push(s)}
+  else p.appendChild(document.createTextNode(part))});
+ c.appendChild(p);
+ var b=el("div","btns",'<button class="btn" type="button">Тексеру</button><button class="btn alt" type="button">Қайта бастау</button>');c.appendChild(b);fbbox(c);setScore(3,0,sels.length);
+ b.children[0].onclick=function(){var ok=0;sels.forEach(function(s){if(s.value===s.dataset.a){ok++;s.className="ok"}else s.className="bad"});setScore(3,ok,sels.length);
+  fb(c,ok===sels.length?"good":(ok>=sels.length-2?"mid":"warn"),ok===sels.length?"🎉 Мәтін толық дұрыс!":"Дұрысы: "+ok+" / "+sels.length+". Қызыл тізімдерді қайта қарап шығыңдар.")};
+ b.children[1].onclick=function(){sels.forEach(function(s){s.value="";s.className=""});setScore(3,0,sels.length);$(".fb",c).className="fb"};
+})();
+
+/* ---------- Task 4: calculation ---------- */
+(function(){
+ var T=D.t4,c=card(4,"Есептер","🧑‍🤝‍🧑 Бірге есептеңдер. <b>Шарты:</b> әр макроэргиялық байланыс үзілгенде 40 кДж/моль энергия бөлінеді деп алыңдар. Ондық бөлшекті үтірмен де, нүктемен де жазуға болады.");
+ var ins=[];
+ T.items.forEach(function(it,i){var d=el("div","calc",'<div><b>'+(i+1)+'.</b> '+it.q+'</div>');var inp=el("input","num-in");inp.type="text";inp.inputMode="decimal";inp.placeholder="жауабы";inp.autocomplete="off";
+  var sol=el("div","sol");d.appendChild(el("div","",""));var row=d.lastChild;row.style.marginTop="6px";row.appendChild(inp);row.appendChild(document.createTextNode(" "+it.u));d.appendChild(sol);c.appendChild(d);ins.push({i:inp,s:sol,it:it});inp.oninput=function(){inp.className="";sol.className="sol"}});
+ var b=el("div","btns",'<button class="btn" type="button">Тексеру</button><button class="btn alt" type="button">Қайта бастау</button>');c.appendChild(b);fbbox(c);setScore(4,0,ins.length);
+ b.children[0].onclick=function(){var ok=0;ins.forEach(function(o){var v=parseFloat(String(o.i.value).replace(",",".").replace(/\s/g,""));
+  if(!isNaN(v)&&Math.abs(v-o.it.a)<0.01){ok++;o.i.className="num-in ok";o.s.className="sol show";o.s.textContent="✔ Шешуі: "+o.it.sol}
+  else{o.i.className="num-in bad";o.s.className="sol show hint";o.s.textContent="Қайта есептеңдер: энергия = зат мөлшері × байланыс саны × 40 кДж/моль."}});
+  setScore(4,ok,ins.length);fb(c,ok===ins.length?"good":(ok?"mid":"warn"),ok===ins.length?"🎉 Барлық есеп дұрыс шықты!":"Дұрысы: "+ok+" / "+ins.length+".")};
+ b.children[1].onclick=function(){ins.forEach(function(o){o.i.value="";o.i.className="num-in";o.s.className="sol"});setScore(4,0,ins.length);$(".fb",c).className="fb"};
+})();
+
+/* ---------- Task 5: true/false ---------- */
+(function(){
+ var T=D.t5,c=card(5,"Дұрыс па, бұрыс па?","🧑‍🤝‍🧑 Алдымен жұппен талқылаңдар, сосын жауапты таңдаңдар. Нәтиже бірден көрінеді.");
+ var st=T.map(function(){return null});
+ function recalc(){var o=0;st.forEach(function(v,i){if(v!==null&&v===T[i][1])o++});setScore(5,o,T.length)}
+ T.forEach(function(it,i){var d=el("div","tf",'<div><b>'+(i+1)+'.</b> '+it[0]+'</div>');var tb=el("div","tfb",'<button type="button">Дұрыс</button><button type="button">Бұрыс</button>');var why=el("div","why");
+  [true,false].forEach(function(val,k){tb.children[k].onclick=function(){st[i]=val;var good=(val===it[1]);tb.children[0].className=tb.children[1].className="";tb.children[k].className=good?"ok":"bad";why.className="why show";why.innerHTML=(good?"✔ Дұрыс! ":"✘ Қате. ")+it[2];recalc()}});
+  d.appendChild(tb);d.appendChild(why);c.appendChild(d)});
+ setScore(5,0,T.length);
+})();
+
+/* ---------- Task 6: discussion ---------- */
+(function(){
+ var T=D.t6,c=card(6,"Жұптық талқылау","🧑‍🤝‍🧑 Екеуің бірге ойланып, ортақ жауап жазыңдар (3–5 сөйлем). Сосын төмендегі тізіммен өзара тексеріңдер.");
+ c.appendChild(el("p","","<b>Сұрақ:</b> "+T.q));
+ var ta=el("textarea");ta.placeholder="Жұптың ортақ жауабы...";c.appendChild(ta);
+ try{ta.value=localStorage.getItem(D.name+"ta")||""}catch(e){};ta.addEventListener("input",function(){try{localStorage.setItem(D.name+"ta",ta.value)}catch(e){}});
+ c.appendChild(el("p","hintline","Өз жауабыңда төмендегі ойлардың қайсысы бар? Бар болса — белгілеңдер (әр белгі — 1 ұпай):"));
+ var k=el("div","keys"),cbs=[];
+ T.keys.forEach(function(t){var l=el("label","",'<input type="checkbox"><span>'+t+'</span>');k.appendChild(l);cbs.push(l.firstChild)});c.appendChild(k);
+ function rc(){var o=cbs.filter(function(x){return x.checked}).length;setScore(6,o,cbs.length)}
+ cbs.forEach(function(x){x.onchange=rc});setScore(6,0,cbs.length);
+})();
+
+/* ---------- Result ---------- */
+var res=el("section","card result");
+res.innerHTML='<h2 style="justify-content:center">🏁 Қорытынды</h2><div class="big" id="rs">0 / 0</div><p id="rm">Тапсырмаларды орындап, нәтижені қараңдар.</p>'+
+ '<div class="btns" style="justify-content:center"><button class="btn" type="button" id="cp">📋 Нәтижені көшіру</button><button class="btn alt" type="button" id="rl">↺ Бәрін басынан бастау</button></div><div class="fb" id="cpf"></div>';
+root.appendChild(res);
+root.appendChild(el("footer","","Мектеп биология курсының (10-сынып) жалпы қабылданған мәліметтері негізінде дайындалған оқу материалы. Мектеп курсында әр макроэргиялық байланыс үшін ≈40 кДж/моль алынады.<br>Интернетсіз де жұмыс істейді: бетті ашқаннан кейін логин не код қажет емес."));
+function finalUpdate(){var s=0,t=0;for(var k in max){s+=scores[k]||0;t+=max[k]}var r=$("#rs");if(!r)return;r.textContent=s+" / "+t;var p=t?s/t:0;
+ $("#rm").textContent=p>=.85?"🌟 Тамаша! Тақырыпты өте жақсы меңгердіңдер.":p>=.6?"👍 Жақсы! Қателерді қайта қарап шығыңдар.":p>0?"📖 Тақырыпты қайталап, тапсырмаларды қайта орындап көріңдер.":"Тапсырмаларды орындап, нәтижені қараңдар."}
+finalUpdate();
+$("#cp").onclick=function(){var s=0,t=0,parts=[];for(var k in max){s+=scores[k]||0;t+=max[k];parts.push(k+"-тапсырма: "+(scores[k]||0)+"/"+max[k])}
+ var txt=D.name+" · Жұп: "+($("#p1").value||"—")+", "+($("#p2").value||"—")+" · Ұпай: "+s+"/"+t+" ("+parts.join("; ")+")";
+ function done(){var f=$("#cpf");f.className="fb show good";f.textContent="Көшірілді: "+txt}
+ if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(done,function(){prompt("Көшіріңіз:",txt)});else{prompt("Көшіріңіз:",txt)}};
+$("#rl").onclick=function(){if(confirm("Барлық жауаптар өшіріледі. Жалғастырасыз ба?")){try{localStorage.removeItem(D.name+"ta")}catch(e){}location.reload()}};
+})();
+</script></body></html>
